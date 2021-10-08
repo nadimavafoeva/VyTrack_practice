@@ -29,7 +29,8 @@ public class BrowserUtils {
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             result = true;
         }catch(TimeoutException e){
-            System.out.println("We did not see the error message element");
+            System.out.println(e.getMessage());
+            //  System.out.println("The element is not located");
         }
 
         return result;
