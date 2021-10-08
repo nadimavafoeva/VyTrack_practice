@@ -41,7 +41,7 @@ public class VehiclesPage {
     private WebElement modelYear;
 
     @FindBy(xpath = "(//button[normalize-space(.)='Save and Close'])[1]")
-    private WebElement saveAndContinue;
+    public WebElement saveAndClose;
 
     public void managerGoToVehicles(){
         Actions action = new Actions(Driver.getDriver());
@@ -64,7 +64,7 @@ public class VehiclesPage {
         driverName.sendKeys(faker.name().fullName());
         location.sendKeys(faker.address().cityName());
         modelYear.sendKeys(""+faker.number().numberBetween(1990,2021));
-        saveAndContinue.click();
+        saveAndClose.click();
     }
     public void clickCheckbox(int index){
         checkBoxes.get(index).click();
