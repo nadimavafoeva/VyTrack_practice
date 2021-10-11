@@ -34,7 +34,7 @@ public class AC1_ManagerCreateCar extends TestBase{
         vehiclesPage.createCar();
         BrowserUtils.waitFor(3);
         WebElement message = Driver.getDriver().findElement(By.xpath("//div[@class='flash-messages-holder']"));
-        Assertions.assertTrue(message.isDisplayed());
+        Assertions.assertTrue(message.getText().substring(1).trim().equals("Entity saved"));
     }
     @Test
     public void storeManager3Creates(){
@@ -45,7 +45,7 @@ public class AC1_ManagerCreateCar extends TestBase{
         vehiclesPage.createCar();
         BrowserUtils.waitFor(3);
         WebElement message = Driver.getDriver().findElement(By.xpath("//div[@class='flash-messages-holder']"));
-        Assertions.assertTrue(message.isDisplayed());
+        Assertions.assertTrue(message.getText().substring(1).trim().equals("Entity saved"));
     }
     @Test
     public void salesManager1Creates(){
@@ -56,7 +56,7 @@ public class AC1_ManagerCreateCar extends TestBase{
         vehiclesPage.createCar();
         BrowserUtils.waitFor(3);
         WebElement message = Driver.getDriver().findElement(By.xpath("//div[@class='flash-messages-holder']"));
-        Assertions.assertTrue(message.isDisplayed());
+        Assertions.assertTrue(message.getText().substring(1).trim().equals("Entity saved"));
     }
     @Test
     public void salesManager2Creates(){
@@ -67,7 +67,7 @@ public class AC1_ManagerCreateCar extends TestBase{
         vehiclesPage.createCar();
         BrowserUtils.waitFor(3);
         WebElement message = Driver.getDriver().findElement(By.xpath("//div[@class='flash-messages-holder']"));
-        Assertions.assertTrue(message.isDisplayed());
+        Assertions.assertTrue(message.getText().substring(1).trim().equals("Entity saved"));
     }
     @Test
     public void salesManager3Creates(){
@@ -78,6 +78,6 @@ public class AC1_ManagerCreateCar extends TestBase{
         vehiclesPage.createCar();
         BrowserUtils.waitFor(3);
         WebElement message = Driver.getDriver().findElement(By.xpath("//div[@class='flash-messages-holder']"));
-        Assertions.assertTrue(message.isDisplayed());
+        Assertions.assertTrue(message.getText().substring(1).trim().equals("Entity saved"));
     }
 }

@@ -10,6 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginPage {
 
     @FindBy (id = "prependedInput")
@@ -20,6 +23,12 @@ public class LoginPage {
 
     @FindBy (id ="_submit")
     private WebElement loginBtn;
+
+    @FindBy(xpath = "//i[@class='fa-caret-down']")
+    public WebElement userDropdown;
+
+    @FindBy(xpath = "//ul[@role='menu']/li[(contains (.,'My'))]" )
+    public List<WebElement> userDropdownOptions;
 
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -36,5 +45,13 @@ public class LoginPage {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
         wait.until(ExpectedConditions.titleIs("Dashboard"));
     }
+
+   public ArrayList getDropdownOptions(){
+        ArrayList<String> options = new ArrayList<>();
+       for (WebElement eachOption : userDropdownOptions) {
+           options.add(eachOption.getText());
+       }
+       return options;
+   }
 
 }
