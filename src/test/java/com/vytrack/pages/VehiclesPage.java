@@ -41,7 +41,7 @@ public class VehiclesPage {
     private WebElement modelYear;
 
     @FindBy(xpath = "(//button[normalize-space(.)='Save and Close'])[1]")
-    public WebElement saveAndClose;
+    public static WebElement saveAndClose;
 
     public void managerGoToVehicles(){
         Actions action = new Actions(Driver.getDriver());
